@@ -136,10 +136,10 @@ export async function startAllSessions(
     });
   }
 
-  allSessions.map(async (session: string) => {
+  for (const session of allSessions) {
     const util = new CreateSessionUtil();
     await util.opendata(req, session);
-  });
+  }
 
   return await res
     .status(201)
