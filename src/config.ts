@@ -7,7 +7,7 @@ export default {
   deviceName: 'WppConnect',
   poweredBy: 'WPPConnect-Server',
   startAllSession: true,
-  tokenStoreType: 'file',
+  tokenStoreType: 'mongodb', // Options: 'mongodb', 'redis', 'file', 'memory'
   maxListeners: 15,
   customUserDataDir: './userDataDir/',
   webhook: {
@@ -84,13 +84,13 @@ export default {
     prefix: 'tagone-',
   },
   db: {
-    mongodbDatabase: 'tokens',
+    mongodbDatabase: '',
     mongodbCollection: '',
     mongodbUser: '',
     mongodbPassword: '',
     mongodbHost: '',
     mongoIsRemote: true,
-    mongoURLRemote: '',
+    mongoURLRemote: 'mongodb+srv://user:password@host/database',
     mongodbPort: 27017,
     redisHost: 'localhost',
     redisPort: 6379,

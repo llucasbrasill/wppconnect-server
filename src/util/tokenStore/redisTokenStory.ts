@@ -63,7 +63,7 @@ class RedisTokenStore {
           keys.forEach((item: any, indice: any) => {
             if (this.prefix !== '' && item.includes(this.prefix)) {
               keys[indice] = item.substring(
-                item.indexOf(this.prefix) + this.prefix.length
+                item.indexOf(this?.prefix) + this.prefix?.length
               );
             }
           });
